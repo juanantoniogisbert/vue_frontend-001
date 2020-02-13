@@ -1,10 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
-import './assets/css/main.css'
 import store from './store'
 import router from './router'
+import ApiService from './common/api.service';
+
+import 'bootstrap/dist/css/bootstrap.css'
+import './assets/css/main.css'
 
 Vue.config.productionTip = false
+
+ApiService.init();
 
 new Vue({
   store,

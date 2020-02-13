@@ -1,0 +1,1 @@
+export const HOTEL_LIST = 'HOTEL_LIST';
