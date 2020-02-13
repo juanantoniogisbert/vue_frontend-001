@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-	<h1>adasd</h1>
 	<Theheader />
     <router-view />
   </div>
@@ -8,7 +7,7 @@
 
 <script>
 
-import { Theheader } from '@/components/Theheader'
+import Theheader  from '@/components/Theheader'
 
 export default {
 	name: 'App',
