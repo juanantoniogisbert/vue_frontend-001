@@ -7,7 +7,7 @@
 
 <script>
     export default {
-        name: 'Theheader',
+        name: 'Header',
         computed: {
 
         }
