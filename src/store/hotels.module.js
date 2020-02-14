@@ -6,17 +6,23 @@ const state = {
 }
 
 const getters = {
-    hotels(state) {return state.hotels}
+    hotels(state) {
+        console.log(state);
+        return state.hotels;
+    }
 }
 
 const actions = {
-    [HOTEL_LIST]() {
-        return ApiService.get('/hotels')
+    async [HOTEL_LIST]({commit}) {
+        const { data } = await ApiService.get('/hotels');
+        commit(HOTEL_LIST, data);
     }
 }
 
 const mutations = {
-
+    [HOTEL_LIST](state, data) {
+        state.hotels = data.results;
+    }
 }
 
 export default {
