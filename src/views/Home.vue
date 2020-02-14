@@ -1,16 +1,19 @@
 <template>
   <div class="home">
-    <p>{{hotel}}</p>
+    <HotelList :hotels="hotel"/>
   </div>
 </template>
 
 <script>
 import { HOTEL_LIST } from "@/store/actions.type";
 import { mapGetters } from "vuex";
+import HotelList from "@/components/HotelList";
 
 export default {
   name: "Home",
-  components: {},
+  components: {
+    HotelList
+  },
 
   mounted() {
     // console.log(this.$store.dispatch(HOTEL_LIST, this.hotel));
@@ -18,7 +21,7 @@ export default {
   },
   computed: {
     ...mapGetters(["hotels"]),
-    hotel(){
+    hotel() {
       var hoteles = this.$store.state.hotel.hotels;
       console.log(typeof hoteles);
       return hoteles;

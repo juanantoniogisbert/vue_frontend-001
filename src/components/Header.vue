@@ -8,8 +8,5 @@
 <script>
     export default {
         name: 'Header',
-        computed: {
-
-        }
     }
 </script>
