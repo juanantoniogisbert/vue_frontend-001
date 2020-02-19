@@ -1,20 +1,33 @@
-import Vue from 'vue';
 import Axios from "axios";
+import Vue from 'vue';
 import VueAxios from "vue-axios";
 import { API_URL } from './constants';
+import { getToken } from './jwt.service';
 
 const ApiService = {
     init() {
-        Vue.use(VueAxios, Axios)
+        Vue.use(VueAxios, Axios);
         Vue.axios.defaults.baseURL = API_URL;
+        
+        if (getToken()) {
+            this.setHeader();
+        }
+    },
+
+    setHeader() {
+        Vue.axios.defaults.headers.common["Authorization"] = `Token ${getToken()}`;
+    },
+
+    destroyHeader() {
+        delete Vue.axios.defaults.headers.common["Authorization"];
     },
 
     get(resource) {
-        return Vue.axios.get(resource)
+        return Vue.axios.get(resource);
     },
 
     post(resource, data) {
-        return Vue.axios.post(resource, data)
+        return Vue.axios.post(resource, data);
     },
 
     update() {
@@ -30,12 +43,12 @@ export default ApiService;
 
 export const Hotel = {
     getAll() {
-        return ApiService.get('/hotels')
+        return ApiService.get('/hotels');
     }
-}
+};
 
 export const Auth = {
     login(data) {
-        return ApiService.post('/login', {user:data})
+        return ApiService.post('/login', { user: data });
     }
-}
+};
