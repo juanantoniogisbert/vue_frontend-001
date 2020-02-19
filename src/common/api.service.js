@@ -37,5 +37,9 @@ export const Hotel = {
 export const Auth = {
     login(data) {
         return ApiService.post('/login', {user:data})
+    },
+
+    register(data) {
+        return ApiService.post('/register', {user:data})
     }
 }

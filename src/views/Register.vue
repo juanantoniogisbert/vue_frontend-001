@@ -1,37 +1,32 @@
 <template>
-    <div>
-        <h1>Register</h1>
-        <div>
-            <input
-                type="text"
-                v-model="username"
-                placeholder="Username"
-                autocomplete="off"/>
-        <br/>
-            <input
-                type="email"
-                v-model="email"
-                placeholder="Email"
-                autocomplete="off"/>
-        <br/>
-            <input
-                type="password"
-                v-model="password"
-                placeholder="Password"/>
-        </div>
-    </div>
+  <div>
+    <h1>Register</h1>
+    <b-form @submit.prevent="onSubmit(username, email, password)">
+      <b-form-group>
+        <b-input id="username" type="text" autocomplete="off" v-model="username" placeholder="Usuario"/>
+        <b-input id="email" autocomplete="off" v-model="email" placeholder="Email" />
+        <b-input id="password" type="password" autocomplete="off" v-model="password" placeholder="Password"/>
+        <b-button type="submit" variant="outline-light" class="btn-block">Register</b-button>
+      </b-form-group>
+    </b-form>
+  </div>
 </template>
 
 <script>
+import { REGISTER } from "@/store/actions.type.js";
 export default {
     name: "Register",
     data(){
         return{
-            username: null
+            username: null,
+            email: null,
+            password: null
         }
     },
     methods: {
-        
+        onSubmit(username, email, password) {
+            this.$store.dispatch(REGISTER, {username, email, password});
+        }
     }
 }
 </script>
