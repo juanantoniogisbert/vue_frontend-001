@@ -1,4 +1,4 @@
-import ApiService from "../common/api.service";
+import { Hotel } from "../common/api.service";
 import { HOTEL_LIST } from "./actions.type";
 
 const state = {
@@ -14,7 +14,7 @@ const getters = {
 
 const actions = {
     async [HOTEL_LIST]({commit}) {
-        const { data } = await ApiService.get('/hotels');
+        const { data } = await Hotel.getAll();
         commit(HOTEL_LIST, data);
     }
 }

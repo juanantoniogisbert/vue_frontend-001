@@ -2,8 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Register from '../views/Register.vue'
+import Login from '../views/Login.vue';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
@@ -23,11 +24,17 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: Register
-  }
+  },
+  {
+	path: '/login',
+	name: 'Login',
+	component: Login
+}
 ]
 
 const router = new VueRouter({
-  routes
-})
+	mode: 'history',
+	routes
+});
 
-export default router
+export default router;

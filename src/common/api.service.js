@@ -13,8 +13,8 @@ const ApiService = {
         return Vue.axios.get(resource)
     },
 
-    post() {
-
+    post(resource, data) {
+        return Vue.axios.post(resource, data)
     },
 
     update() {
@@ -27,3 +27,15 @@ const ApiService = {
 };
 
 export default ApiService;
+
+export const Hotel = {
+    getAll() {
+        return ApiService.get('/hotels')
+    }
+}
+
+export const Auth = {
+    login(data) {
+        return ApiService.post('/login', {user:data})
+    }
+}
