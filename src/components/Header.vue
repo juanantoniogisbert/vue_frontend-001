@@ -9,11 +9,15 @@
     <div style="display: inline-block">
       <a href="" v-on:click="logout">Logout</a>
     </div>
+	<div>
+		<a href="" v-if="currentUser">{{currentUser.username}}</a>
+	</div>
   </div>
 </template>
 
 <script>
 import { LOGOUT } from "@/store/actions.type";
+import { mapGetters } from "vuex";
 
 export default {
 	name: "Header",
@@ -21,8 +25,10 @@ export default {
 		logout(ev) {
 			ev.preventDefault();
 			this.$store.dispatch(LOGOUT)
-			this.$router.replace('/');
 		}
+	},
+	computed: {
+		...mapGetters(["currentUser"])
 	}
 };
 </script>
