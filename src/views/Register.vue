@@ -24,8 +24,13 @@ export default {
         }
     },
     methods: {
-        onSubmit(username, email, password) {
-            this.$store.dispatch(REGISTER, {username, email, password});
+        async onSubmit(username, email, password) {
+			try {
+				await this.$store.dispatch(REGISTER, {username, email, password});
+				this.$router.replace('/');
+			} catch (error){
+				alert(error);
+			}
         }
     }
 }

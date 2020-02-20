@@ -16,12 +16,13 @@
 import { LOGOUT } from "@/store/actions.type";
 
 export default {
-    name: "Header",
-    methods: {
-        logout(ev) {
-            ev.preventDefault();
-            this.$store.dispatch(LOGOUT)
-        }
-    }
+	name: "Header",
+	methods: {
+		logout(ev) {
+			ev.preventDefault();
+			this.$store.dispatch(LOGOUT)
+			this.$router.replace('/');
+		}
+	}
 };
 </script>
