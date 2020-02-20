@@ -55,13 +55,9 @@ const actions = {
     },
         
     async [REGISTER]({ commit }, register) {
-        try {
-            const log = await Auth.register(register);
-            console.log(REGISTER, log);
-            commit(REGISTER, log);
-        } catch (error) {
-            console.log("axant register");
-        }
+        const log = await Auth.register(register);
+        console.log(REGISTER, log);
+        commit(REGISTER, log);
     }
 };
 
