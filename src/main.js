@@ -7,6 +7,7 @@ import ApiService from './common/api.service';
 import router from './router';
 import store from './store';
 
+import './style.css';
 
 Vue.config.productionTip = false;
 
