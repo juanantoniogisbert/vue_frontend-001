@@ -2,11 +2,11 @@
   <div>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> | 
-    <div style="display: inline-block">
+    <div class="in-line">
       <router-link to="/login">login</router-link> |
       <router-link to="/register">Register</router-link>
     </div> |
-    <div style="display: inline-block">
+    <div class="in-line">
       <a href="" v-on:click="logout">Logout</a>
     </div>
   </div>
