@@ -1,24 +1,28 @@
-# vue_frontend-001
+# VUE FRONTEND
 
-## Project setup
-```
-npm install
-```
+- [Alejandro](https://github.com/ALEJ4NDRO29/)
+- [Juanan](https://github.com/juanantoniogisbert)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Instalación
+    git clone https://github.com/juanantoniogisbert/vue_frontend-001.git
 
-### Lints and fixes files
-```
-npm run lint
-```
+    cd vue_frontend-001
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+    npm install
+
+    npm run serve
+
+En el comando "npm install" instalamos todas las dependencias y librerias necesarias para la aplicacion, con el siguiente comando encedemos la misma
+
+## Descripción 
+
+La aplicacion de VUE utiliza el backend Django.
+
+ - https://github.com/juanantoniogisbert/backend_django-001.git
+
+
+En esta aplicación cogemos todos los datos que nos envian desde el servidor de Django.
+- Home: podemos encontrar un listado de Hoteles con una breve informacion.
+- Login
+- Register
