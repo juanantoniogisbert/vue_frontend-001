@@ -8,7 +8,7 @@
     </div> |
     <div class="in-line">
       <a href="" v-on:click="logout">Logout</a>
-    </div>
+    </div> | 
 	<div class="in-line">
 		<a href="" v-if="currentUser">{{currentUser.username}}</a>
 	</div>
