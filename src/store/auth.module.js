@@ -2,6 +2,7 @@ import ApiService, { Auth } from "../common/api.service";
 import { destroyToken, getToken, saveToken } from "../common/jwt.service";
 import { CHECK_AUTH, LOGIN, LOGOUT, REGISTER } from "./actions.type";
 
+
 const state = {
     errors: null,
     user: null
@@ -29,21 +30,17 @@ const mutations = {
         state.user = {
             username: result.data.user.username,
             email: result.data.user.email,
-        }
+        };
     }
 };
 
 const actions = {
     async [LOGIN]({ commit }, login) {
-        try {
-            const res = await Auth.login(login);
-            console.log('LOGIN', res);
-            commit(LOGIN, res);
-        } catch (error) {
-            console.log(error);
-        }
+        const res = await Auth.login(login);
+        console.log('LOGIN', res);
+        commit(LOGIN, res);
     },
-    
+
     [CHECK_AUTH]() {
         if (getToken()) {
             ApiService.setHeader();
@@ -53,7 +50,7 @@ const actions = {
     [LOGOUT]({ commit }) {
         commit(LOGOUT);
     },
-        
+
     async [REGISTER]({ commit }, register) {
         try {
             const log = await Auth.register(register);

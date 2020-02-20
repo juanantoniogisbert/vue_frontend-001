@@ -28,8 +28,14 @@ export default {
     };
   },
   methods: {
-    onSubmit(email, password) {
-      this.$store.dispatch(LOGIN, {email, password});
+    async onSubmit(email, password) {
+      try {
+        await this.$store.dispatch(LOGIN, {email, password});
+        this.$router.replace('/');
+      } catch (error) {
+        console.log(error);
+        alert(error)
+      }
     }
   }
 };
