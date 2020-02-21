@@ -2,10 +2,8 @@
   <b-card>
     <b-card :title="hotel.name">
       <b-card-text></b-card-text>
-
       <b-card-text>A second paragraph of text in the card.</b-card-text>
-
-      <b-link href="#" class="card-link">More</b-link>
+      <router-link :to="{ name: 'HotelDet', params: { id: this.hotel.id }}" class="btn btn-outline-light">More .|.</router-link>
     </b-card>
   </b-card>
 </template>

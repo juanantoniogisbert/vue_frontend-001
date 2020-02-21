@@ -44,7 +44,10 @@ export default ApiService;
 export const Hotel = {
     getAll() {
         return ApiService.get('/hotels');
-    }
+    },
+    get(id){
+        return ApiService.get(`/hotels/${id}`);
+    } 
 };
 
 export const Auth = {
