@@ -33,7 +33,7 @@ const mutations = {
         state.hotels = data.results;
     },
     [HOTEL_DETAILS](state, data) {
-        state.hotel = data.results;
+        state.hotel = data;
     }
 }
 

@@ -31,6 +31,12 @@ const mutations = {
             username: result.data.user.username,
             email: result.data.user.email,
         };
+    },
+    [CHECK_AUTH](state, result) {
+        state.user = {
+            username: result.data.user.username,
+            email: result.data.user.email,
+        };
     }
 };
 
@@ -41,9 +47,13 @@ const actions = {
         commit(LOGIN, res);
     },
 
-    [CHECK_AUTH]() {
+    async [CHECK_AUTH]({ commit }) {
         if (getToken()) {
             ApiService.setHeader();
+            console.log('GET CURRENT');
+            
+            let user = await Auth.current();
+            commit(CHECK_AUTH, user)
         }
     },
 

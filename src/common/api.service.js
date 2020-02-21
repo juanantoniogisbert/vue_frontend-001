@@ -51,6 +51,10 @@ export const Hotel = {
 };
 
 export const Auth = {
+    current() {
+        return ApiService.get('/user') 
+    },
+    
     login(data) {
         return ApiService.post('/login', { user: data });
     },
